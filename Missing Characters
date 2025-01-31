@@ -1,0 +1,18 @@
+def missingCharacters(s):
+    # All possible digits and lowercase letters
+    all_digits = set('0123456789')
+    all_letters = set('abcdefghijklmnopqrstuvwxyz')
+    
+    # Characters present in the input string
+    present = set(s)
+    
+    # Find missing digits and letters
+    missing_digits = sorted(all_digits - present)
+    missing_letters = sorted(all_letters - present)
+    
+    # Combine and return the result
+    return ''.join(missing_digits) + ''.join(missing_letters)
+
+# Taking input from the user
+s = input("Enter the string: ")
+print(missingCharacters(s))
